@@ -305,4 +305,15 @@
             });
         });
     }
+
+    window.selectDestinationAndApply = function(countryName) {
+        if (!countryName) return;
+        var slug = countryName.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '');
+        window.location.href = 'country.html?dest=' + encodeURIComponent(slug);
+    };
 })();
+
+window.toggleMobileMenu = function() {
+    var m = document.getElementById("mobileMenu");
+    if (m) m.classList.toggle("hidden");
+};

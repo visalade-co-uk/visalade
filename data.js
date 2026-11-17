@@ -220,4 +220,4 @@ const BLOG_POSTS = [
     }
 ];
 
-module.exports = { COUNTRIES, REVIEWS, FAQS, BLOG_POSTS };
+module.exports = { COUNTRIES, REVIEWS, FAQS };

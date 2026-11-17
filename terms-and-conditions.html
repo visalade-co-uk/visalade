@@ -456,52 +456,78 @@
       .legal-card { border: none; box-shadow: none; padding: 0; }
     }
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldBrand: { DEFAULT: '#064E3B', dark: '#043927', soft: '#ECFDF5' },
+            goldBrand: { DEFAULT: '#C59B27', dark: '#A8821D', soft: '#FEF9EC' },
+            ivoryBg: '#FAF9F6',
+            stoneBorder: '#E7E5E4',
+            charcoalText: '#1E293B',
+            slateMuted: '#475569',
+          },
+          fontFamily: {
+            serifEditorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="brand" aria-label="Visalade home">
-      <img src="assets/logo.png" alt="" width="52" height="52" loading="eager" decoding="async" />
-      <span class="brand-text">
-        <span class="brand-title">VISALADE</span>
-        <span class="brand-sub">Visa &amp; Travel Concierge</span>
-      </span>
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="index.html#destinations">Destinations</a>
-      <a href="index.html#packages">Packages &amp; Pricing</a>
-      <a href="index.html#requirements">Requirements &amp; FAQ</a>
-      <a href="terms-and-conditions.html" aria-current="page">Terms &amp; Conditions</a>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="tel:+447576016131" class="btn-emerald">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h2.7l1.3 4-2 1.4a13 13 0 0 0 5 5l1.4-2 4 1.3v2.7A2.6 2.6 0 0 1 16.4 18 14.4 14.4 0 0 1 6 7.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>
-        +44 7576 016131
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stoneBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[96px] flex items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="Visalade Home">
+        <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain transition-transform duration-200 group-hover:scale-105" loading="eager" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
+        <svg style="display:none;width:56px;height:56px;" class="shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
+          <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#064E3B"/>
+          <path d="M11 25C16 31 27 26 36 14" stroke="#064E3B" stroke-width="2.8" stroke-linecap="round"/>
+          <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
+        </svg>
+        <span class="self-center text-2xl font-serifEditorial font-bold text-emeraldBrand">VISALADE</span>
       </a>
-      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Home</a>
+        <a href="index.html#destinations" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Destinations</a>
+        <a href="index.html#packages" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Packages &amp; Pricing</a>
+        <a href="index.html#requirements" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Requirements &amp; FAQ</a>
+        <a href="terms-and-conditions.html" class="text-sm font-semibold text-emeraldBrand transition-colors">Terms &amp; Conditions</a>
+      </nav>
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20Schengen%20or%20visa%20application." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 text-sm font-semibold text-charcoalText bg-white border border-stoneBorder rounded-xl hover:bg-stone-50 hover:border-stone-300 transition-all">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span> WhatsApp
+        </a>
+        <a href="country.html?dest=france" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-emeraldBrand hover:bg-emeraldBrand-dark rounded-xl shadow-sm transition-all">Start Application</a>
+        <button type="button" id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl border border-stoneBorder text-charcoalText hover:bg-stone-50" aria-label="Toggle Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#destinations">Destinations</a>
-    <a href="index.html#packages">Packages &amp; Pricing</a>
-    <a href="index.html#requirements">Requirements &amp; FAQ</a>
-    <a href="terms-and-conditions.html" aria-current="page">Terms &amp; Conditions</a>
-    <a href="tel:+447576016131" class="btn-emerald">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h2.7l1.3 4-2 1.4a13 13 0 0 0 5 5l1.4-2 4 1.3v2.7A2.6 2.6 0 0 1 16.4 18 14.4 14.4 0 0 1 6 7.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>
-      Call an adviser
-    </a>
-  </div>
-</header>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-stoneBorder px-5 py-5 space-y-3">
+      <a href="index.html" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Home</a>
+      <a href="index.html#destinations" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Destinations</a>
+      <a href="index.html#packages" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Packages &amp; Pricing</a>
+      <a href="index.html#requirements" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Requirements &amp; FAQ</a>
+      <a href="terms-and-conditions.html" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-emeraldBrand font-semibold">Terms &amp; Conditions</a>
+      <div class="pt-2 border-t border-stoneBorder flex flex-col gap-2.5">
+        <a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20visa%20application." target="_blank" rel="noopener" class="w-full py-3 text-center text-sm font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/20 rounded-xl">
+          Message an Adviser on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
 
 <main id="main-content">
 
@@ -582,64 +608,72 @@
 
 </main>
 
-<footer class="legal-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Visalade" width="72" height="72" loading="lazy" decoding="async" />
-        <span class="brand-text">
-          <span class="brand-title">VISALADE</span>
-          <span class="brand-sub">Visa &amp; Travel Concierge</span>
-        </span>
-        <p>Visalade Limited is a private travel and visa assistance consultancy registered in England &amp; Wales. Not affiliated with any government, embassy, consulate, VFS Global or TLScontact.</p>
+  <footer class="bg-emeraldBrand text-white pt-16 pb-12 mt-16 border-t border-stoneBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-3">
+            <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
+            <svg style="display:none;width:56px;height:56px;" class="shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
+              <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#FAF9F6"/>
+              <path d="M11 25C16 31 27 26 36 14" stroke="#FAF9F6" stroke-width="2.8" stroke-linecap="round"/>
+              <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
+            </svg>
+            <span class="self-center text-2xl font-serifEditorial font-bold text-white">VISALADE</span>
+          </div>
+          <p class="text-xs text-emerald-100/85 leading-relaxed">
+            Visalade Limited is a private travel and visa assistance consultancy registered in England &amp; Wales. <strong>Not affiliated with any government, embassy, consulate, VFS Global, or TLScontact.</strong>
+          </p>
+          <p class="text-[0.72rem] text-emerald-200/75 leading-relaxed">
+            For UK destinations, Visalade provides strictly non-advisory travel logistics (itineraries, reservations, travel insurance) and does not provide regulated UK immigration advice.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Popular Destinations</h4>
+          <ul class="space-y-2.5 text-sm text-emerald-100/90">
+            <li><button type="button" onclick="selectDestinationAndApply('France')" class="hover:text-goldBrand transition-colors">France Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Spain')" class="hover:text-goldBrand transition-colors">Spain Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Italy')" class="hover:text-goldBrand transition-colors">Italy Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Germany')" class="hover:text-goldBrand transition-colors">Germany Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Netherlands')" class="hover:text-goldBrand transition-colors">Netherlands Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Switzerland')" class="hover:text-goldBrand transition-colors">Switzerland Schengen Visa</button></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Company &amp; Legal</h4>
+          <ul class="space-y-2.5 text-sm text-emerald-100/90">
+            <li><a href="#packages" class="hover:text-goldBrand transition-colors">Packages &amp; Fixed Pricing</a></li>
+            <li><a href="#requirements" class="hover:text-goldBrand transition-colors">Document Checklist</a></li>
+            <li><a href="#requirements" class="hover:text-goldBrand transition-colors">Requirements &amp; FAQ</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-goldBrand transition-colors">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html" class="hover:text-goldBrand transition-colors">Refund &amp; Cancellation Policy</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-goldBrand transition-colors">Privacy Policy (UK GDPR)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Contact &amp; UK Office</h4>
+          <ul class="space-y-3 text-sm text-emerald-100/90">
+            <li class="flex items-start gap-2.5"><span class="text-goldBrand mt-0.5">●</span><span>Registered Office: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</span></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><a href="mailto:info@visalade.co.uk" class="hover:text-goldBrand transition-colors">info@visalade.co.uk</a></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><a href="tel:+447576016131" class="hover:text-goldBrand transition-colors">+44 7576 016131</a></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><span>Hours: Mon–Sat 9:00–18:00 UK Time</span></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="footer-col">
-        <h3>Company &amp; Legal</h3>
-        <ul>
-          <li><a href="index.html#packages">Packages &amp; Fixed Pricing</a></li>
-          <li><a href="index.html#requirements">Document Checklist</a></li>
-          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-          <li><a href="refund-policy.html">Refund &amp; Cancellation Policy</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy (UK GDPR)</a></li>
-          <li><a href="cookie-policy.html">Cookie Policy</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#destinations">Schengen Destinations</a></li>
-          <li><a href="requirements.html">Requirements &amp; FAQ</a></li>
-          <li><a href="country.html">Country Guides</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Talk to us</h3>
-        <ul>
-          <li><a href="tel:+447576016131">+44 7576 016131</a></li>
-          <li><a href="mailto:info@visalade.co.uk">info@visalade.co.uk</a></li>
-          <li><a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20visa%20application." target="_blank" rel="noopener">WhatsApp an adviser</a></li>
-          <li><span class="muted">71–75 Shelton Street, Covent Garden, London, WC2H 9JQ</span></li>
-          <li><span class="muted">Mon–Sat, 9:00–18:00 UK time</span></li>
-        </ul>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-200/75">
+        <p>© 2026 Visalade Limited (visalade.co.uk). All rights reserved. Registered in England &amp; Wales.</p>
+        <div class="flex items-center gap-5">
+          <a href="terms-and-conditions.html" class="hover:text-white">Terms</a>
+          <a href="refund-policy.html" class="hover:text-white">Refund Policy</a>
+          <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        </div>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Visalade Limited (visalade.co.uk). All rights reserved. Registered in England &amp; Wales.</p>
-      <div class="legal-links">
-        <a href="terms-and-conditions.html">Terms</a>
-        <a href="refund-policy.html">Refund Policy</a>
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="cookie-policy.html">Cookies</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
   (function () {
@@ -661,5 +695,16 @@
   })();
 </script>
 
+  <script>
+    function selectDestinationAndApply(countryName) {
+      window.location.href = "country.html?dest=" + encodeURIComponent(countryName.toLowerCase().replace(/ /g, "-").replace(/[^a-z-]/g, ""));
+    }
+  </script>
+  <script>
+    function toggleMobileMenu() {
+      var m = document.getElementById("mobileMenu");
+      if (m) m.classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>

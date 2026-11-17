@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { BRAND, CORE_PAGES } = require('./config');
-const { COUNTRIES, BLOG_POSTS } = require('./data');
+const { COUNTRIES } = require('./data');
 const { LEGAL } = require('./legal');
 const P = require('./pages');
 const L = require('./layout');
@@ -73,19 +73,27 @@ const pages = {
     'faq.html': P.faqPage(),
     'contact.html': P.contact(),
     'apply.html': P.applyPage(),
-    'blog.html': P.blogIndex(),
     'requirements.html': P.requirements(),
     'thank-you.html': P.thankYou(),
     '404.html': P.notFound()
 };
 
 for (const c of COUNTRIES) {
-    pages[`${c.slug}.html`] = P.countryPage(c);
+    pages[`${c.slug}.html`] = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>${c.name} Visa Assistance | Visalade</title>
+  <meta http-equiv="refresh" content="0; url=country.html?dest=${c.slug}">
+  <script>window.location.replace('country.html?dest=${c.slug}');</script>
+</head>
+<body style="font-family:sans-serif; text-align:center; padding:50px;">
+  <p>Loading ${c.name} Visa Guide... <a href="country.html?dest=${c.slug}">Click here if you are not redirected</a>.</p>
+</body>
+</html>`;
 }
 
-for (const post of BLOG_POSTS) {
-    pages[`blog/${post.slug}.html`] = P.blogPost(post);
-}
+
 
 for (const [slug, doc] of Object.entries(LEGAL)) {
     // 'terms-and-conditions.html' is maintained as a standalone page.
@@ -103,14 +111,12 @@ for (const [rel, html] of Object.entries(pages)) {
 const urls = [
     ...CORE_PAGES,
     ...COUNTRIES.map((c) => `${c.slug}.html`),
-    ...BLOG_POSTS.map((p) => `blog/${p.slug}.html`),
     ...Object.keys(LEGAL).map((s) => `${s}.html`)
 ];
 
 const priority = (file) => {
     if (file === 'index.html') return '1.0';
     if (['visas.html', 'schengen.html', 'pricing.html'].includes(file)) return '0.9';
-    if (file.startsWith('blog/')) return '0.6';
     if (Object.keys(LEGAL).some((s) => `${s}.html` === file)) return '0.3';
     return '0.8';
 };

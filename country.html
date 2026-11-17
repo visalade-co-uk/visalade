@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schengen Visa Assistance from the UK | Visalade</title>
+  <meta name="description" content="Specialist Schengen visa appointment booking, document review, and concierge support for UK residents." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldBrand: { DEFAULT: '#064E3B', dark: '#043927', soft: '#ECFDF5' },
+            goldBrand: { DEFAULT: '#C59B27', dark: '#A8821D', soft: '#FEF9EC' },
+            ivoryBg: '#FAF9F6',
+            stoneBorder: '#E7E5E4',
+            charcoalText: '#1E293B',
+            slateMuted: '#475569',
+          },
+          fontFamily: {
+            serifEditorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --brand-emerald: #064E3B;
+      --brand-emerald-dark: #043927;
+      --brand-emerald-soft: #ECFDF5;
+      --brand-gold: #C59B27;
+      --brand-gold-dark: #A8821D;
+      --brand-gold-soft: #FEF9EC;
+      --bg-page: #FAF9F6;
+      --bg-surface: #FFFFFF;
+      --border-stone: #E7E5E4;
+      --text-primary: #1E293B;
+      --text-muted: #475569;
+    }
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .hero-wrap {
+      padding: 24px 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .country-hero {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+      color: #FFFFFF;
+      box-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.25);
+    }
+    .country-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(4, 57, 39, 0.92) 0%, rgba(6, 78, 59, 0.78) 50%, rgba(11, 27, 63, 0.88) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #FFFFFF; }
+    .breadcrumb strong { color: var(--brand-gold); }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(197, 155, 39, 0.2);
+      border: 1px solid rgba(197, 155, 39, 0.45);
+      color: #FEF9EC;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #FDE047;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 28px;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .hero-cta-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--brand-gold);
+      color: #043927;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.4);
+      transition: all 0.2s;
+    }
+    .hero-cta-main:hover {
+      background: #EAB308;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.5);
+    }
+    .hero-metrics {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .metric-item {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 14px 18px;
+    }
+    .metric-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 600;
+    }
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 4px;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+    }
+    .section-header {
+      margin-bottom: 24px;
+    }
+    .section-eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand-gold-dark);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--brand-emerald);
+      line-height: 1.2;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .info-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-stone);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s;
+    }
+    .info-card:hover {
+      border-color: var(--brand-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6, 78, 59, 0.08);
+    }
+    .info-card h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .info-card p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brand-emerald);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .info-card small {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: block;
+    }
+    .checklist-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-stone);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 60px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+    .tab-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid var(--border-stone);
+      background: var(--bg-page);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { border-color: var(--brand-emerald); }
+    .tab-btn.active {
+      background: var(--brand-emerald);
+      color: #FFFFFF;
+      border-color: var(--brand-emerald);
+      box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+    }
+    .doc-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+    }
+    .doc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--bg-page);
+      border: 1px solid var(--border-stone);
+      border-radius: 14px;
+    }
+    .doc-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: var(--brand-emerald-soft);
+      color: var(--brand-emerald);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .doc-item strong {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--brand-emerald);
+      margin-bottom: 4px;
+    }
+    .doc-item span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .price-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-stone);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s;
+    }
+    .price-card:hover {
+      border-color: var(--brand-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(6, 78, 59, 0.08);
+    }
+    .price-card.featured {
+      border: 2px solid var(--brand-gold);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FEF9EC 100%);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--brand-gold);
+      color: #043927;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(197, 155, 39, 0.4);
+    }
+    .price-tier {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-gold-dark);
+      margin-bottom: 10px;
+    }
+    .price-amount {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-emerald);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .price-amount span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .price-features li {
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .price-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--brand-emerald);
+      font-weight: 700;
+    }
+    .btn-emerald {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      background: var(--brand-emerald);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-emerald:hover {
+      background: var(--brand-emerald-dark);
+      box-shadow: 0 4px 14px rgba(6, 78, 59, 0.3);
+    }
+    .fee-disclaimer {
+      background: var(--brand-gold-soft);
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      line-height: 1.55;
+      margin-bottom: 60px;
+    }
+    #faq .section-header {
+      margin-bottom: 16px;
+    }
+    #faq .section-title {
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    }
+    .faq-list {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-stone);
+      border-radius: 10px;
+      padding: 10px 16px;
+      transition: all 0.2s;
+    }
+    .faq-item[open] {
+      border-color: var(--brand-gold);
+      box-shadow: 0 4px 12px rgba(6, 78, 59, 0.04);
+    }
+    .faq-item summary {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--brand-emerald);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 1.4;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--brand-gold-dark);
+      margin-left: 12px;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .intake-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-stone);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(6, 78, 59, 0.05);
+      margin-bottom: 60px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-stone);
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--brand-emerald);
+      box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+    }
+    .submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-stone);
+    }
+    .form-success {
+      display: none;
+      background: var(--brand-emerald-soft);
+      border: 1px solid var(--brand-emerald);
+      color: var(--brand-emerald);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .footer {
+      background: var(--brand-emerald);
+      color: #FFFFFF;
+      padding: 60px 16px 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 36px;
+    }
+    .footer h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-gold);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer a {
+      display: block;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer a:hover { color: var(--brand-gold); }
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      background: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body class="antialiased selection:bg-emeraldBrand selection:text-white">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stoneBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[96px] flex items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="Visalade Home">
+        <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain transition-transform duration-200 group-hover:scale-105" loading="eager" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
+        <svg style="display:none;width:56px;height:56px;" class="shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
+          <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
+          <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#064E3B"/>
+          <path d="M11 25C16 31 27 26 36 14" stroke="#064E3B" stroke-width="2.8" stroke-linecap="round"/>
+          <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
+        </svg>
+        <span class="self-center text-2xl font-serifEditorial font-bold text-emeraldBrand">VISALADE</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Home</a>
+        <a href="index.html#destinations" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Destinations</a>
+        <a href="#packages" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Packages &amp; Pricing</a>
+        <a href="#requirements" class="nav-link text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Requirements &amp; FAQ</a>
+        <a href="terms-and-conditions.html" class="text-sm font-medium text-slateMuted hover:text-emeraldBrand transition-colors">Terms &amp; Conditions</a>
+      </nav>
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20Schengen%20or%20visa%20application." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 text-sm font-semibold text-charcoalText bg-white border border-stoneBorder rounded-xl hover:bg-stone-50 hover:border-stone-300 transition-all">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span> WhatsApp
+        </a>
+        <a href="#apply" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 text-sm font-semibold text-white bg-emeraldBrand hover:bg-emeraldBrand-dark rounded-xl shadow-sm transition-all">Start Application</a>
+        <button type="button" id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl border border-stoneBorder text-charcoalText hover:bg-stone-50" aria-label="Toggle Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-stoneBorder px-5 py-5 space-y-3">
+      <a href="index.html" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Home</a>
+      <a href="index.html#destinations" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Destinations</a>
+      <a href="#packages" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Packages &amp; Pricing</a>
+      <a href="#requirements" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Requirements &amp; FAQ</a>
+      <a href="terms-and-conditions.html" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-charcoalText">Terms &amp; Conditions</a>
+      <div class="pt-2 border-t border-stoneBorder flex flex-col gap-2.5">
+        <a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20visa%20application." target="_blank" rel="noopener" class="w-full py-3 text-center text-sm font-semibold text-emeraldBrand bg-emeraldBrand-soft border border-emeraldBrand/20 rounded-xl">
+          Message an Adviser on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="country-hero" id="heroBanner" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80');">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> <span>›</span>
+          <a href="index.html#destinations">Countries</a> <span>›</span>
+          <strong id="crumbCountry">France</strong>
+        </div>
+
+        <div class="hero-pill" id="heroBadge">FRANCE · SCHENGEN VISA</div>
+
+        <h1 class="hero-title">
+          Your <em id="heroCountryName">France</em> visa,<br>handled with care.
+        </h1>
+
+        <p class="hero-subtitle" id="heroSubtitle">Plan your trip to France and the wider Schengen area. We handle appointments, document review, and full application preparation.</p>
+
+        <div class="hero-cta-group">
+          <a href="#apply" class="hero-cta-main">✈ Start my application</a>
+        </div>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-label">Processing</div>
+          <div class="metric-value" id="metricProcessing">15–30 days</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Validity</div>
+          <div class="metric-value" id="metricValidity">Up to 90 days</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Consular Reach</div>
+          <div class="metric-value" id="metricReach">29 Schengen states</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Consular &amp; Appointment Overview</div>
+      <h2 class="section-title" id="overviewHeading">Applying for France from the UK</h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Visa Application Centre</h3>
+        <p id="cardCentre">TLScontact (London, Manchester, Edinburgh)</p>
+        <small id="cardCentresSub">Biometric submission in person by appointment</small>
+      </div>
+      <div class="info-card">
+        <h3>Official Embassy &amp; Centre Fee</h3>
+        <p id="cardEmbassyFee">€90 Adult / €45 Child (ages 6–11)</p>
+        <small>Paid directly to the consulate / VFS at appointment</small>
+      </div>
+      <div class="info-card">
+        <h3>Financial Means Guideline</h3>
+        <p id="cardFunds">€65/day (with hotel) or €120/day</p>
+        <small>Shown via 3 months of recent UK bank statements</small>
+      </div>
+      <div class="info-card">
+        <h3>Consulate Filing Rule</h3>
+        <p id="cardRule">Main Destination or First Entry</p>
+        <small id="cardPortalNote">Requires official France-Visas receipt before TLS booking.</small>
+      </div>
+    </div>
+
+    <section id="checklist" class="checklist-box">
+      <div class="section-header">
+        <div class="section-eyebrow">Tailored File Audit</div>
+        <h2 class="section-title" id="checklistTitle">Required Documents for France</h2>
+      </div>
+
+      <div class="tab-row">
+        <button class="tab-btn active" onclick="renderDocs('employed', this)">Employed</button>
+        <button class="tab-btn" onclick="renderDocs('selfEmployed', this)">Self-Employed</button>
+        <button class="tab-btn" onclick="renderDocs('student', this)">Student</button>
+        <button class="tab-btn" onclick="renderDocs('sponsored', this)">Sponsored / Dependent</button>
+      </div>
+
+      <ul class="doc-list" id="docList">
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>Valid Passport</strong>
+            <span>Issued within the last 10 years, valid at least 3 months beyond your return date, with 2 blank pages.</span>
+          </div>
+        </li>
+      
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>UK eVisa Share Code / Residence Proof</strong>
+            <span>Active UK immigration status valid at least 3 months after your planned return to the UK.</span>
+          </div>
+        </li>
+      
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>Employer Reference Letter</strong>
+            <span>Dated within 30 days on company letterhead confirming job title, salary, start date, and approved leave.</span>
+          </div>
+        </li>
+      
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>Last 3 Months UK Bank Statements</strong>
+            <span>Official PDF statements showing your name, UK address, regular salary credits, and required daily balance.</span>
+          </div>
+        </li>
+      
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>Last 3 Months Payslips</strong>
+            <span>Matching the salary deposits shown on your UK current account statements.</span>
+          </div>
+        </li>
+      
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>Travel Insurance &amp; Reservations</strong>
+            <span>€30,000 minimum Schengen medical coverage plus verifiable return flight and hotel bookings.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="packages">
+      <div class="section-header">
+        <div class="section-eyebrow">Fixed-Fee UK Consultancy</div>
+        <h2 class="section-title">Choose Your Support Level</h2>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <div class="price-tier">Tier 1 · Appointment Only</div>
+            <div class="price-amount">£99 <span>/ applicant</span></div>
+            <ul class="price-features">
+              <li>Official VFS / TLS biometric slot booking</li>
+              <li>Cancellation-slot monitoring alerts</li>
+              <li>Day-of appointment document briefing</li>
+              <li>Dedicated named WhatsApp specialist</li>
+            </ul>
+          </div>
+          <a href="#apply" class="btn-emerald" style="justify-content:center;" onclick="selectPackage('Slot Booking (£99)')">Select Slot Booking</a>
+        </div>
+
+        <div class="price-card featured">
+          <span class="popular-tag">Most Popular</span>
+          <div>
+            <div class="price-tier">Tier 2 · Full Preparation</div>
+            <div class="price-amount">£165 <span>/ applicant</span></div>
+            <ul class="price-features">
+              <li>Everything in Slot Booking</li>
+              <li>Complete official visa form completion</li>
+              <li>Line-by-line bank &amp; UK eVisa document audit</li>
+              <li>Tailored cover letter &amp; day-by-day itinerary</li>
+              <li>Verifiable flight &amp; hotel reservation support</li>
+            </ul>
+          </div>
+          <a href="#apply" class="btn-emerald" style="justify-content:center;" onclick="selectPackage('Full Visa Preparation (£165)')">Select Full Package</a>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <div class="price-tier">Tier 3 · Urgent Priority</div>
+            <div class="price-amount">£250 <span>/ applicant</span></div>
+            <ul class="price-features">
+              <li>Same-day file audit within 24 hours</li>
+              <li>Priority early-release appointment tracking</li>
+              <li>Extended evening specialist support</li>
+              <li>Detailed previous-refusal cover letter review</li>
+            </ul>
+          </div>
+          <a href="#apply" class="btn-emerald" style="justify-content:center;" onclick="selectPackage('Urgent Priority Concierge (£250)')">Select Urgent Concierge</a>
+        </div>
+      </div>
+
+      <div class="fee-disclaimer">
+        <strong>Transparent Fee Notice:</strong> Prices above cover Visalade Limited consultancy and document preparation services only. Official embassy/consulate visa fees and VFS Global / TLScontact service centre charges are paid separately at official cost.
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="section-header">
+        <div class="section-eyebrow">Common Questions</div>
+        <h2 class="section-title" id="faqHeading">France Visa FAQ</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <details class="faq-item">
+          <summary>How early before my trip should I apply for a France visa from the UK?</summary>
+          <p>You can submit your application up to 6 months before your intended travel date, and no later than 15 working days prior to departure. Peak summer and holiday appointment slots often book out 4–8 weeks ahead.</p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Which UK city do I attend for France biometrics?</summary>
+          <p>Applications are lodged via TLScontact (London, Manchester, Edinburgh). Depending on consular jurisdiction rules, your appointment location is matched to your UK residential postcode.</p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>What if I am visiting multiple European countries alongside France?</summary>
+          <p>Under the Schengen Code, apply through France if France is your longest stay—or if you spend equal nights across countries, if France is your first port of entry.</p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Can you help if I previously had a Schengen or UK visa refusal?</summary>
+          <p>Yes. Our Full Preparation and Urgent Priority packages include a line-by-line review of your previous refusal notice so we address every consular concern in your cover letter and supporting evidence.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="apply" class="intake-card">
+      <div class="section-eyebrow">Nothing to Pay Now</div>
+      <h2 class="section-title" id="formTitle">Start Your France Application</h2>
+      <p style="font-size:0.92rem; color:var(--text-muted); margin-top:4px;">
+        Submit your trip details below—your dedicated specialist will review your eligibility and message you on WhatsApp or email within 2 working hours.
+      </p>
+
+      <form id="visaForm" onsubmit="handleIntake(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fCountry">Destination Country</label>
+            <select id="fCountry"></select>
+          </div>
+          <div class="form-group">
+            <label for="fPackage">Preferred Package</label>
+            <select id="fPackage">
+              <option value="Full Visa Preparation (£165)">Full Visa Preparation (£165)</option>
+              <option value="Slot Booking (£99)">Slot Booking (£99)</option>
+              <option value="Urgent Priority Concierge (£250)">Urgent Priority Concierge (£250)</option>
+              <option value="Not sure yet — advise me">Not sure yet — advise me</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fPurpose">Travel Purpose</label>
+            <select id="fPurpose">
+              <option>Tourism / Holiday</option>
+              <option>Business / Conference</option>
+              <option>Visiting Family or Friends</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fDate">Planned Travel Date</label>
+            <input type="date" id="fDate" required="">
+          </div>
+          <div class="form-group">
+            <label for="fStatus">UK Residency Status</label>
+            <select id="fStatus">
+              <option>UK eVisa / Skilled Worker / Student</option>
+              <option>UK BRP / Dependant Visa</option>
+              <option>Indefinite Leave to Remain (ILR)</option>
+              <option>Other / Visiting UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fName">Full Name</label>
+            <input type="text" id="fName" placeholder="e.g. Sarah Khan" required="">
+          </div>
+          <div class="form-group">
+            <label for="fPhone">UK WhatsApp / Phone</label>
+            <input type="tel" id="fPhone" placeholder="e.g. 07700 900123" required="">
+          </div>
+          <div class="form-group">
+            <label for="fEmail">Email Address</label>
+            <input type="email" id="fEmail" placeholder="you@example.com" required="">
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <span style="font-size:0.82rem; color:var(--text-muted);">🔒 UK GDPR protected · No payment collected on this form</span>
+          <button type="submit" class="btn-emerald" style="padding:13px 28px;">Submit Free Eligibility Check →</button>
+        </div>
+
+        <div class="form-success" id="formSuccess"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-emeraldBrand text-white pt-16 pb-12 mt-16 border-t border-stoneBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-3">
+            <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
+            <svg style="display:none;width:56px;height:56px;" class="shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
+              <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
+              <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#FAF9F6"/>
+              <path d="M11 25C16 31 27 26 36 14" stroke="#FAF9F6" stroke-width="2.8" stroke-linecap="round"/>
+              <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
+            </svg>
+            <span class="self-center text-2xl font-serifEditorial font-bold text-white">VISALADE</span>
+          </div>
+          <p class="text-xs text-emerald-100/85 leading-relaxed">
+            Visalade Limited is a private travel and visa assistance consultancy registered in England &amp; Wales. <strong>Not affiliated with any government, embassy, consulate, VFS Global, or TLScontact.</strong>
+          </p>
+          <p class="text-[0.72rem] text-emerald-200/75 leading-relaxed">
+            For UK destinations, Visalade provides strictly non-advisory travel logistics (itineraries, reservations, travel insurance) and does not provide regulated UK immigration advice.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Popular Destinations</h4>
+          <ul class="space-y-2.5 text-sm text-emerald-100/90">
+            <li><button type="button" onclick="selectDestinationAndApply('France')" class="hover:text-goldBrand transition-colors">France Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Spain')" class="hover:text-goldBrand transition-colors">Spain Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Italy')" class="hover:text-goldBrand transition-colors">Italy Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Germany')" class="hover:text-goldBrand transition-colors">Germany Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Netherlands')" class="hover:text-goldBrand transition-colors">Netherlands Schengen Visa</button></li>
+            <li><button type="button" onclick="selectDestinationAndApply('Switzerland')" class="hover:text-goldBrand transition-colors">Switzerland Schengen Visa</button></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Company &amp; Legal</h4>
+          <ul class="space-y-2.5 text-sm text-emerald-100/90">
+            <li><a href="#packages" class="hover:text-goldBrand transition-colors">Packages &amp; Fixed Pricing</a></li>
+            <li><a href="#requirements" class="hover:text-goldBrand transition-colors">Document Checklist</a></li>
+            <li><a href="#requirements" class="hover:text-goldBrand transition-colors">Requirements &amp; FAQ</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-goldBrand transition-colors">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html" class="hover:text-goldBrand transition-colors">Refund &amp; Cancellation Policy</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-goldBrand transition-colors">Privacy Policy (UK GDPR)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-goldBrand mb-4">Contact &amp; UK Office</h4>
+          <ul class="space-y-3 text-sm text-emerald-100/90">
+            <li class="flex items-start gap-2.5"><span class="text-goldBrand mt-0.5">●</span><span>Registered Office: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</span></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><a href="mailto:info@visalade.co.uk" class="hover:text-goldBrand transition-colors">info@visalade.co.uk</a></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><a href="tel:+447576016131" class="hover:text-goldBrand transition-colors">+44 7576 016131</a></li>
+            <li class="flex items-center gap-2.5"><span class="text-goldBrand">●</span><span>Hours: Mon–Sat 9:00–18:00 UK Time</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-200/75">
+        <p>© 2026 Visalade Limited (visalade.co.uk). All rights reserved. Registered in England &amp; Wales.</p>
+        <div class="flex items-center gap-5">
+          <a href="terms-and-conditions.html" class="hover:text-white">Terms</a>
+          <a href="refund-policy.html" class="hover:text-white">Refund Policy</a>
+          <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/447576016131?text=Hello%20Visalade%2C%20I%20would%20like%20assistance%20with%20a%20Schengen%20visa%20application." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    // Complete 29 Schengen States Dataset
+    const COUNTRIES = {
+      austria: {
+        name: "Austria",
+        badge: "AUSTRIA · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1600&q=80",
+        centre: "VFS Global (London, Manchester, Edinburgh)",
+        processing: "15–45 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum €100/day + confirmed stay",
+        portalNote: "Requires digital Schengen form + VFS biometric appointment."
+      },
+      france: {
+        name: "France",
+        badge: "FRANCE · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
+        centre: "TLScontact (London, Manchester, Edinburgh)",
+        processing: "15–30 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "€65/day (with hotel) or €120/day",
+        portalNote: "Requires official France-Visas receipt before TLS booking."
+      },
+      spain: {
+        name: "Spain",
+        badge: "SPAIN · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=80",
+        centre: "BLS International (London, Manchester, Edinburgh)",
+        processing: "15–45 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum €113.40/day (min. €1,020.60 total)",
+        portalNote: "Strict UK postcode jurisdiction applies per BLS centre."
+      },
+      italy: {
+        name: "Italy",
+        badge: "ITALY · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1600&q=80",
+        centre: "VFS Global (London, Manchester, Edinburgh)",
+        processing: "15–40 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Sliding scale ~€50–€95/day + paid accommodation",
+        portalNote: "Consulate jurisdiction depends on your UK residential address."
+      },
+      germany: {
+        name: "Germany",
+        badge: "GERMANY · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1600&q=80",
+        centre: "TLScontact (London, Manchester, Edinburgh)",
+        processing: "15–30 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum €45–€85/day + confirmed bookings",
+        portalNote: "Requires VIDEX barcode form prior to TLS appointment."
+      },
+      netherlands: {
+        name: "Netherlands",
+        badge: "NETHERLANDS · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=1600&q=80",
+        centre: "VFS Global (London, Manchester, Edinburgh)",
+        processing: "15–45 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum €55/day + return flights & hotel",
+        portalNote: "Centralized processing via The Hague; apply early in peak months."
+      },
+      switzerland: {
+        name: "Switzerland",
+        badge: "SWITZERLAND · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1600&q=80",
+        centre: "TLScontact (London, Manchester, Edinburgh)",
+        processing: "15–30 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum CHF 100/day (CHF 30/day for students)",
+        portalNote: "Requires online Swiss visa portal submission before TLS."
+      },
+      greece: {
+        name: "Greece",
+        badge: "GREECE · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=80",
+        centre: "GVCW (London, Manchester, Edinburgh)",
+        processing: "15–30 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "Minimum €50/day (min. €300 for up to 5 days)",
+        portalNote: "Submitted via Global Visa Center World (GVCW) UK centres."
+      },
+      portugal: {
+        name: "Portugal",
+        badge: "PORTUGAL · SCHENGEN VISA",
+        heroImg: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1600&q=80",
+        centre: "VFS Global (London, Manchester)",
+        processing: "15–45 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds: "€75 entry + €40/day of stay",
+        portalNote: "Requires E-Visa Portugal portal registration before VFS slot."
+      },
+    };
+
+    const OTHER_SCHENGEN = [
+      ["belgium", "Belgium", "TLScontact (London, Manchester, Edinburgh)", "€95/day (hotel) or €45/day (private stay)"],
+      ["sweden", "Sweden", "VFS Global (London, Edinburgh)", "SEK 450 (~€40) per day"],
+      ["norway", "Norway", "VFS Global (London, Edinburgh)", "NOK 500 (~€45) per day"],
+      ["denmark", "Denmark", "VFS Global (London, Manchester, Edinburgh)", "DKK 350–500 (~€50–€68) per day"],
+      ["finland", "Finland", "VFS Global (London, Manchester, Edinburgh)", "Minimum €50 per day"],
+      ["poland", "Poland", "Consulate / VFS (London, Manchester, Edinburgh)", "PLN 300 (~€70) for up to 4 days + PLN 75/day"],
+      ["czech-republic", "Czech Republic", "VFS Global (London, Manchester)", "CZK 1,565 (~€62) per day"],
+      ["hungary", "Hungary", "VFS Global (London, Manchester, Edinburgh)", "Minimum €65–€80/day + paid accommodation"],
+      ["croatia", "Croatia", "VFS Global (London)", "Minimum €70/day (or €30/day with paid hotel)"],
+      ["iceland", "Iceland", "VFS Global (London, Manchester, Edinburgh)", "ISK 8,000 (~€55) per day"],
+      ["malta", "Malta", "VFS Global (London, Manchester, Edinburgh)", "Minimum €48 per day"],
+      ["luxembourg", "Luxembourg", "VFS Global (London)", "Minimum €65–€85/day + confirmed stay"],
+      ["slovakia", "Slovakia", "Embassy of Slovakia (London)", "Minimum €56 per day"],
+      ["slovenia", "Slovenia", "VFS Global (London)", "Minimum €70 per day"],
+      ["estonia", "Estonia", "VFS Global (London)", "Minimum €70–€100 per day"],
+      ["latvia", "Latvia", "Embassy of Latvia (London)", "Minimum €45–€65 per day"],
+      ["lithuania", "Lithuania", "VFS Global (London)", "Minimum €50 per day"],
+      ["bulgaria", "Bulgaria", "Embassy / VFS (London)", "Minimum €50/day (min. €500 total)"],
+      ["romania", "Romania", "Consulate General (London, Manchester, Edinburgh)", "Minimum €50/day (min. €500 total)"],
+      ["liechtenstein", "Liechtenstein", "TLScontact via Switzerland (London, Manchester, Edinburgh)", "Minimum CHF 100 per day"]
+    ];
+
+    OTHER_SCHENGEN.forEach(([slug, name, centre, funds]) => {
+      COUNTRIES[slug] = {
+        name,
+        badge: `${name.toUpperCase()} · SCHENGEN VISA`,
+        heroImg: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1600&q=80",
+        centre,
+        processing: "15–45 days",
+        validity: "Up to 90 days",
+        reach: "29 Schengen states",
+        embassyFee: "€90 Adult / €45 Child (ages 6–11)",
+        funds,
+        portalNote: "Apply through this consulate if it is your main destination or first port of entry."
+      };
+    });
+
+    const DOC_SETS = {
+      employed: [
+        { title: "Valid Passport", desc: "Issued within the last 10 years, valid at least 3 months beyond your return date, with 2 blank pages." },
+        { title: "UK eVisa Share Code / Residence Proof", desc: "Active UK immigration status valid at least 3 months after your planned return to the UK." },
+        { title: "Employer Reference Letter", desc: "Dated within 30 days on company letterhead confirming job title, salary, start date, and approved leave." },
+        { title: "Last 3 Months UK Bank Statements", desc: "Official PDF statements showing your name, UK address, regular salary credits, and required daily balance." },
+        { title: "Last 3 Months Payslips", desc: "Matching the salary deposits shown on your UK current account statements." },
+        { title: "Travel Insurance & Reservations", desc: "€30,000 minimum Schengen medical coverage plus verifiable return flight and hotel bookings." }
+      ],
+      selfEmployed: [
+        { title: "Valid Passport & UK eVisa Share Code", desc: "Both valid for at least 3 months past your planned return date from the destination." },
+        { title: "HMRC Self-Assessment / Companies House Proof", desc: "Latest SA302 tax calculation, Certificate of Incorporation, or accountant confirmation letter." },
+        { title: "3 Months Personal & Business Bank Statements", desc: "Showing consistent income and sufficient liquid funds for the entire trip." },
+        { title: "Cover Letter & Day-by-Day Itinerary", desc: "Prepared by your Visalade specialist detailing your business continuity and travel plan." },
+        { title: "Schengen Travel Insurance (€30,000+)", desc: "Covering emergency medical care, repatriation, and all dates of travel." },
+        { title: "Confirmed Accommodation & Return Travel", desc: "Matching hotel/Airbnb confirmations and round-trip transport tickets." }
+      ],
+      student: [
+        { title: "Valid Passport & UK Student eVisa Share Code", desc: "Valid at least 3 months beyond your return date to the United Kingdom." },
+        { title: "University Enrolment Letter", desc: "Official letter from your UK university/college dated within 30 days confirming full-time study and term dates." },
+        { title: "3 Months UK Bank Statements", desc: "Showing regular living allowance/maintenance funds covering the daily consular threshold." },
+        { title: "Parent / Sponsor Financial Pack (If Applicable)", desc: "Signed sponsorship letter, sponsor's passport copy, and 3 months of sponsor bank statements." },
+        { title: "Travel Medical Insurance (€30,000+)", desc: "Valid across all Schengen states for your exact trip dates." },
+        { title: "Flight & Hotel Reservations", desc: "Consistent dates across your application form, cover letter, and bookings." }
+      ],
+      sponsored: [
+        { title: "Applicant Passport & UK eVisa Share Code", desc: "Valid at least 3 months after your scheduled return to the UK." },
+        { title: "Signed Sponsorship Letter", desc: "Formal declaration from your spouse, parent, or host confirming full financial responsibility." },
+        { title: "Proof of Relationship", desc: "Marriage certificate, birth certificate, or official UK household documentation." },
+        { title: "Sponsor's UK Bank Statements & Income Proof", desc: "Last 3 months statements, payslips, and passport/eVisa copy of the sponsor." },
+        { title: "Travel Insurance (€30,000+ Coverage)", desc: "Individual policy certificate naming the applicant for the full duration of travel." },
+        { title: "Accommodation & Flight Itinerary", desc: "Hotel reservations or official municipal host invitation certificate where required." }
+      ]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const rawDest = (params.get("dest") || params.get("country") || "france").toLowerCase();
+    const activeSlug = rawDest === "czechia" ? "czech-republic" : rawDest;
+    const activeCountry = COUNTRIES[activeSlug] || COUNTRIES.france;
+
+    function populateCountryPage(c, slug) {
+      document.title = `${c.name} Visa Assistance from the UK | Visalade`;
+      document.getElementById("heroBanner").style.backgroundImage = `url('${c.heroImg}')`;
+      document.getElementById("crumbCountry").textContent = c.name;
+      document.getElementById("heroBadge").textContent = c.badge;
+      document.getElementById("heroCountryName").textContent = c.name;
+      document.getElementById("heroSubtitle").textContent =
+        `Plan your trip to ${c.name} and the wider Schengen area. We handle appointments, document review, and full application preparation.`;
+
+      document.getElementById("metricProcessing").textContent = c.processing;
+      document.getElementById("metricValidity").textContent = c.validity;
+      document.getElementById("metricReach").textContent = c.reach;
+
+      document.getElementById("overviewHeading").textContent = `Applying for ${c.name} from the UK`;
+      document.getElementById("cardCentre").textContent = c.centre;
+      document.getElementById("cardEmbassyFee").textContent = c.embassyFee;
+      document.getElementById("cardFunds").textContent = c.funds;
+      document.getElementById("cardPortalNote").textContent = c.portalNote;
+
+      document.getElementById("checklistTitle").textContent = `Required Documents for ${c.name}`;
+      document.getElementById("faqHeading").textContent = `${c.name} Visa FAQ`;
+      document.getElementById("formTitle").textContent = `Start Your ${c.name} Application`;
+
+      const faqs = [
+        { q: `How early before my trip should I apply for a ${c.name} visa from the UK?`, a: `You can submit your application up to 6 months before your intended travel date, and no later than 15 working days prior to departure. Peak summer and holiday appointment slots often book out 4–8 weeks ahead.` },
+        { q: `Which UK city do I attend for ${c.name} biometrics?`, a: `Applications are lodged via ${c.centre}. Depending on consular jurisdiction rules, your appointment location is matched to your UK residential postcode.` },
+        { q: `What if I am visiting multiple European countries alongside ${c.name}?`, a: `Under the Schengen Code, apply through ${c.name} if ${c.name} is your longest stay—or if you spend equal nights across countries, if ${c.name} is your first port of entry.` },
+        { q: `Can you help if I previously had a Schengen or UK visa refusal?`, a: `Yes. Our Full Preparation and Urgent Priority packages include a line-by-line review of your previous refusal notice so we address every consular concern in your cover letter and supporting evidence.` }
+      ];
+
+      document.getElementById("faqList").innerHTML = faqs.map(f => `
+        <details class="faq-item">
+          <summary>${f.q}</summary>
+          <p>${f.a}</p>
+        </details>
+      `).join("");
+    }
+
+    function renderDocs(profile, btnEl) {
+      if (btnEl) {
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btnEl.classList.add("active");
+      }
+      const items = DOC_SETS[profile] || DOC_SETS.employed;
+      document.getElementById("docList").innerHTML = items.map(d => `
+        <li class="doc-item">
+          <span class="doc-check">✓</span>
+          <div>
+            <strong>${d.title}</strong>
+            <span>${d.desc}</span>
+          </div>
+        </li>
+      `).join("");
+    }
+
+    const fCountry = document.getElementById("fCountry");
+    if (fCountry) {
+      fCountry.innerHTML = "";
+      Object.entries(COUNTRIES).forEach(([slug, data]) => {
+        const opt = document.createElement("option");
+        opt.value = data.name;
+        opt.textContent = data.name;
+        if (slug === activeSlug) opt.selected = true;
+        fCountry.appendChild(opt);
+      });
+    }
+
+    function toggleMobileMenu() {
+      const m = document.getElementById("mobileMenu");
+      if (m) m.classList.toggle("hidden");
+    }
+
+    function selectPackage(pkgName) {
+      document.getElementById("fPackage").value = pkgName;
+    }
+
+    function selectDestinationAndApply(countryName) {
+      window.location.href = "country.html?dest=" + encodeURIComponent(countryName.toLowerCase().replace(/ /g, "-").replace(/[^a-z-]/g, ""));
+    }
+
+    function handleIntake(e) {
+      e.preventDefault();
+      const name = document.getElementById("fName").value;
+      const country = document.getElementById("fCountry").value;
+      const pkg = document.getElementById("fPackage").value;
+      const phone = document.getElementById("fPhone").value;
+      const box = document.getElementById("formSuccess");
+      box.style.display = "block";
+      box.textContent = `✓ Thank you, ${name}. Your ${country} inquiry (${pkg}) has been logged—a Visalade specialist will reach out to ${phone} shortly.`;
+    }
+
+    populateCountryPage(activeCountry, activeSlug);
+    renderDocs("employed");
+
+    if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const lenis = new window.Lenis({ lerp: 0.09, smoothWheel: true, syncTouch: false });
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  </script>
+</body>
+</html>

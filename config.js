@@ -115,7 +115,6 @@ const CORE_PAGES = [
     'faq.html',
     'contact.html',
     'apply.html',
-    'blog.html',
     'requirements.html'
 ];
 

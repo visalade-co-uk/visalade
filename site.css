@@ -338,7 +338,6 @@ html.js .reveal.is-in {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 50%;
 }
 
 .brand--light .brand__mark { width: 60px; height: 60px; }
