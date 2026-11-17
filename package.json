@@ -1,10 +1,11 @@
 {
-  "name": "Visalade-site",
+  "name": "visalade-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Visalade - UK Schengen visa support. Static site generated from build/data.js.",
+  "description": "Visalade - UK Schengen visa support static site.",
   "scripts": {
-    "build": "node build/build.js",
+    "build": "echo 'Static site ready'",
+    "generate": "node build/build.js",
     "dev": "node build/serve.js",
     "start": "node build/serve.js",
     "check": "node build/check.js",
