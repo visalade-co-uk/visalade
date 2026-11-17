@@ -31,5 +31,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/assets/logo-mark.png",
+      "destination": "/assets/logo.png"
+    }
   ]
 }

@@ -57,20 +57,8 @@ function flag(code, cls) {
 function logo(cls) {
     const isLight = cls && cls.includes('light');
     const textColor = isLight ? 'text-white' : 'text-emeraldBrand';
-    const vColor = isLight ? '#FAF9F6' : '#064E3B';
-    return `<span class="brand${cls ? ' ' + cls : ''}">
-        <span class="brand__mark" aria-hidden="true">
-            <img src="assets/logo-mark.png" alt="Visalade" width="80" height="80" loading="eager" decoding="async" style="object-fit:contain;" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
-            <svg style="display:none;width:56px;height:56px;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
-              <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="${vColor}"/>
-              <path d="M11 25C16 31 27 26 36 14" stroke="${vColor}" stroke-width="2.8" stroke-linecap="round"/>
-              <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
-            </svg>
-        </span>
+    return `<span class="inline-flex items-center gap-3">
+        <img src="assets/logo.png" alt="Visalade" class="w-20 h-20 object-contain" loading="eager">
         <span class="self-center text-2xl font-serifEditorial font-bold ${textColor}">VISALADE</span>
     </span>`;
 }
@@ -134,16 +122,7 @@ function header(active) {
     return `<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stoneBorder">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[96px] flex items-center justify-between gap-4">
       <a href="index.html" class="inline-flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="Visalade Home">
-        <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain transition-transform duration-200 group-hover:scale-105" loading="eager" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
-        <svg style="display:none;width:56px;height:56px;" class="shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
-          <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
-          <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
-          <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
-          <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#064E3B"/>
-          <path d="M11 25C16 31 27 26 36 14" stroke="#064E3B" stroke-width="2.8" stroke-linecap="round"/>
-          <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
-        </svg>
+        <img src="assets/logo.png" alt="Visalade" class="w-20 h-20 object-contain transition-transform duration-200 group-hover:scale-105" loading="eager">
         <span class="self-center text-2xl font-serifEditorial font-bold text-emeraldBrand">VISALADE</span>
       </a>
       <nav class="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
@@ -184,16 +163,7 @@ function footer() {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
         <div class="space-y-4">
           <div class="inline-flex items-center gap-3">
-            <img src="assets/logo-mark.png" alt="Visalade" class="w-20 h-20 object-contain" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/assets/logo.png';}else if(this.dataset.retry==='1'){this.dataset.retry='2';this.src='/assets/favicon.svg';}else{this.style.display='none';this.nextElementSibling.style.display='inline-block';}">
-            <svg style="display:none;width:56px;height:56px;" class="shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="24" cy="24" r="16" stroke="#C59B27" stroke-width="2"/>
-              <ellipse cx="24" cy="24" rx="8" ry="16" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M9 19C14 21.5 34 21.5 39 19" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M9 29C14 26.5 34 26.5 39 29" stroke="#C59B27" stroke-width="1.6"/>
-              <path d="M10 13H15.5L24 33L33.5 12H38.5L25.5 39H22.5L10 13Z" fill="#FAF9F6"/>
-              <path d="M11 25C16 31 27 26 36 14" stroke="#FAF9F6" stroke-width="2.8" stroke-linecap="round"/>
-              <circle cx="39.5" cy="14" r="3" fill="#C59B27"/>
-            </svg>
+            <img src="assets/logo.png" alt="Visalade" class="w-20 h-20 object-contain transition-transform duration-200 group-hover:scale-105" loading="eager">
             <span class="self-center text-2xl font-serifEditorial font-bold text-white">VISALADE</span>
           </div>
           <p class="text-xs text-emerald-100/85 leading-relaxed">
@@ -249,7 +219,7 @@ function footer() {
 <div class="cookie" id="cookieBar" role="region" aria-label="Cookie notice" hidden>
     <div>
         <strong>Essential storage only</strong>
-        <p>This site stores one preference on your device so this notice does not appear on every visit. No analytics, advertising or cross-site tracking. <a href="cookie-policy.html">Read the policy</a>.</p>
+        <p>This site stores one preference on your device so this notice does not appear on every visit. No analytics, advertising or cross-site tracking. <a href="privacy-policy.html">Read privacy policy</a>.</p>
     </div>
     <div class="cookie__actions">
         <button class="btn btn--primary btn--sm" type="button" data-cookie="essential">Got it</button>
