@@ -34,8 +34,16 @@
   ],
   "rewrites": [
     {
+      "source": "/assets/logo.png",
+      "destination": "/logo.png"
+    },
+    {
       "source": "/assets/logo-mark.png",
-      "destination": "/assets/logo.png"
+      "destination": "/logo.png"
+    },
+    {
+      "source": "/assets/favicon.svg",
+      "destination": "/favicon.svg"
     }
   ]
 }
